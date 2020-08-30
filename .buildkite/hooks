@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -eu
+
+export SSH_AUTH_SOCK="/var/lib/buildkite-agent/.ssh/ssh-agent.sock"
