@@ -1,7 +1,7 @@
 steps:
   - label: 'build front'
     command:
-      - "docker-compose build --build-arg API_URL=$API_URL --build-arg NODE_ENV=$NODE_ENV app"
+      - "docker-compose build --pull --build-arg API_URL=$API_URL --build-arg NODE_ENV=$NODE_ENV app"
 
   - wait
 
