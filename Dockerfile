@@ -6,7 +6,7 @@ ENV NODE_ENV ${NODE_ENV:-'production'}
 ARG API_URL
 ENV API_URL ${API_URL}
 
-WORKDIR /app
+WORKDIR /landing
 
 COPY package.json .
 COPY yarn.lock .

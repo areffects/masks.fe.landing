@@ -1,10 +1,10 @@
 steps:
-  - label: 'build front'
+  - label: 'build landing'
     command:
-      - "docker-compose build --build-arg API_URL=$API_URL --build-arg NODE_ENV=$NODE_ENV app"
+      - "docker-compose build --build-arg API_URL=$API_URL --build-arg NODE_ENV=$NODE_ENV landing"
 
   - wait
 
-  - label: 'start front'
+  - label: 'start landing'
     command:
-      - "NODE_ENV=$NODE_ENV API_URL=$API_URL docker-compose up -d app"
+      - "API_URL=http://api:4000 NODE_ENV=production docker-compose up -d landing"

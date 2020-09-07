@@ -1,7 +1,8 @@
 version: '3'
 
 services:
-  app:
+  landing:
+    container_name: landing
     build:
       context: ./
       dockerfile: ./Dockerfile
@@ -11,13 +12,14 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./src:/app/src
-      - ./public:/app/public
-      - ./.env:/app/.env
-      - ./package.json:/app/package.json
+      - ./src:/landing/src
+      - ./public:/landing/public
+      - ./.env:/landing/.env
+      - ./package.json:/landing/package.json
     command: ["./node_modules/.bin/next", "start", "-p", "3000"]
 
   storybook:
+    container_name: storybook
     build:
       context: ./
       dockerfile: ./.storybook/Dockerfile
@@ -26,9 +28,9 @@ services:
     ports:
       - 6006:6006
     volumes:
-      - ./src:/app/src
-      - ./public:/app/public
-      - ./.env:/app/.env
-      - ./package.json:/app/package.json
-      - ./.storybook:/app/.storybook
+      - ./src:/storybook/src
+      - ./public:/storybook/public
+      - ./.env:/storybook/.env
+      - ./package.json:/storybook/package.json
+      - ./.storybook:/storybook/.storybook
     command: ["yarn", "storybook"]
