@@ -1,4 +1,4 @@
-# Masks Front
+# Masks Front Landing
 
 The client side application based on [Next.js](https://nextjs.org/).
 
